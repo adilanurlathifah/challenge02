@@ -27,10 +27,11 @@
 
         <TextView
             android:id="@+id/menu_price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"/>
+            android:textColor="@color/black"
+            android:text="ini harga"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/menu_info"
@@ -39,7 +40,7 @@
             android:text="Ini deskripsi"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:id="@+id/menu_address"
@@ -47,7 +48,8 @@
             android:layout_height="wrap_content"
             android:text="Alamat"
             android:textSize="18sp"
-            android:layout_marginTop="8dp" />
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
 
         <Button
             android:id="@+id/btn_location"

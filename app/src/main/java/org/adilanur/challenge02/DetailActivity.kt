@@ -33,13 +33,17 @@ class DetailActivity : AppCompatActivity() {
 
         val menuName = intent.getStringExtra("menuName")
         val menuDetail = intent.getStringExtra("menuDetail")
+        val menuPrice = intent.getIntExtra("menuPrice", 0)
         val menuImg = intent.getIntExtra("menuImg", R.drawable.default_img)
 
         val nameTextView = findViewById<TextView>(R.id.menu_title)
         val descriptionTextView = findViewById<TextView>(R.id.menu_info)
+        val priceTextView = findViewById<TextView>(R.id.menu_price)
         val imgView = findViewById<ImageView>(R.id.menu_image)
+
         nameTextView.text = menuName
         descriptionTextView.text = menuDetail
+        priceTextView.text = "Rp. $menuPrice"
         imgView.setImageResource(menuImg)
 
     }
