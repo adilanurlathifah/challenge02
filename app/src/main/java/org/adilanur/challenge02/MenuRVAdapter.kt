@@ -31,6 +31,7 @@ class MenuRVAdapter(
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         holder.menuNameTV.text = menuList[position].menuName
         holder.menuImgIV.setImageResource(menuList[position].menuImg)
+        holder.menuPricePV.text = menuList[position].menuPrice.toString()
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(menuList[position])
@@ -44,5 +45,6 @@ class MenuRVAdapter(
     inner class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val menuNameTV: TextView = itemView.findViewById(R.id.idTVMenu)
         val menuImgIV: ImageView = itemView.findViewById(R.id.idIVMenu)
+        val menuPricePV: TextView = itemView.findViewById(R.id.idPVMenu)
     }
 }
