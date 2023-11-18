@@ -1,2 +1,4 @@
-# challenge03 
-challenge 03 chapter 03 - navigasi menggunakan intent
+# challenge04
+challenge 04 :
+- navigasi menggunakan navigation component 
+- buat CRUD untuk aplikasi pemesanan makanan
