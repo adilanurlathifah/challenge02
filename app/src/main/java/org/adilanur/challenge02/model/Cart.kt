@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey
 data class Cart(
     @PrimaryKey(autoGenerate = true)
     var itemId: Long? = null,
+    @ColumnInfo(name = "name")
+    var name:String,
     @ColumnInfo(name = "price")
     var price:Int,
     @ColumnInfo(name = "quantity")
     var quantity: Int,
-    @ColumnInfo(name = "name")
-    var name:String,
     @ColumnInfo(name = "img")
     var img: Int,
 

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.homeFragment || destination.id == R.id.profileFragment || destination.id == R.id.keranjangFragment) {
+            if (destination.id == R.id.homeFragment || destination.id == R.id.keranjangFragment || destination.id == R.id.historyFragment || destination.id == R.id.profileFragment) {
                 binding.bottomNav.setupWithNavController(navController)
                 binding.bottomNav.visibility = View.VISIBLE
 

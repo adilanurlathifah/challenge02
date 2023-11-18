@@ -9,63 +9,53 @@ import coil.load
 import org.adilanur.challenge02.data.dao.CartDao
 import org.adilanur.challenge02.databinding.ItemCartBinding
 import org.adilanur.challenge02.model.Cart
-
 class CartAdapter(private val cartDao: CartDao) :
-    RecyclerView.Adapter<CartItemListViewHolder>() {
+    RecyclerView.Adapter<CartAdapter.CartItemListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartItemListViewHolder {
-        return CartItemListViewHolder(
-            binding = ItemCartBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+        val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CartItemListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CartItemListViewHolder, position: Int) {
-        holder.bind(differ.currentList[position], cartDao)
+        holder.bind(differ.currentList[position])
     }
 
     override fun getItemCount(): Int = differ.currentList.size
 
     fun submitList(cartList: List<Cart>?) {
         differ.submitList(cartList)
-        if (cartList != null) {
-            notifyItemRangeChanged(0,cartList.size)
-        }
     }
 
-    private val differ = AsyncListDiffer(this, object : DiffUtil.ItemCallback<Cart>(){
+    private val differ = AsyncListDiffer(this, object : DiffUtil.ItemCallback<Cart>() {
         override fun areItemsTheSame(oldItem: Cart, newItem: Cart): Boolean {
-            return oldItem.name == newItem.name  && oldItem.price == newItem.price && oldItem.quantity == newItem.quantity && oldItem.img == newItem.img
+            return oldItem.name == newItem.name &&
+                    oldItem.price == newItem.price &&
+                    oldItem.quantity == newItem.quantity &&
+                    oldItem.img == newItem.img
         }
 
         override fun areContentsTheSame(oldItem: Cart, newItem: Cart): Boolean {
             return oldItem.hashCode() == newItem.hashCode()
         }
-
     })
 
+    inner class CartItemListViewHolder(private val binding: ItemCartBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(cart: Cart) {
+            with(binding) {
+                txtFoodName.text = cart.name
+                txtPrice.text = "Rp " + cart.price.toString()
+                qty.text = cart.quantity.toString()
 
-}
-class CartItemListViewHolder(
-    private val binding: ItemCartBinding,) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(food: Cart, cartDao: CartDao) {
-        with(binding) {
-            txtFoodName.text = food.name
-            txtPrice.text ="Rp " +  food.price.toString()
-            qty.text = food.quantity.toString()
-
-            imgFood.load(food.img)
-            btnDelete.setOnClickListener {
-                val itemId = food.itemId
-                if (itemId != null) {
-                    cartDao.delteByItemId(itemId)
+                imgFood.load(cart.img)
+                btnDelete.setOnClickListener {
+                    val itemId = cart.itemId
+                    itemId?.let {
+                        cartDao.delteByItemId(it)
+                    }
                 }
-
             }
         }
-
     }
 }

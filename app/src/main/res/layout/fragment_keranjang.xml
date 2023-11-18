@@ -32,11 +32,11 @@
         android:layout_margin="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cl_pesan" />
+        app:layout_constraintBottom_toTopOf="@+id/context_pesan" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_pesan"
+        android:id="@+id/context_pesan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

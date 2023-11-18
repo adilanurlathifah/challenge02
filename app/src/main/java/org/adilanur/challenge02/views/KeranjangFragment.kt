@@ -43,10 +43,10 @@ class KeranjangFragment : Fragment() {
         dataSource.getAllItem().observe(viewLifecycleOwner) { cartList ->
             if (cartList.isEmpty()) {
                 binding.stateEmpty.visibility = View.VISIBLE
-                binding.clPesan.visibility = View.GONE
+                binding.contextPesan.visibility = View.GONE
             } else {
                 binding.stateEmpty.visibility = View.GONE
-                binding.clPesan.visibility = View.VISIBLE
+                binding.contextPesan.visibility = View.VISIBLE
                 cartAdapter.submitList(cartList)
             }
         }
