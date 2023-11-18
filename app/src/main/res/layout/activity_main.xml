@@ -1,292 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".views.MainActivity">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textIntro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/textIntro"
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            app:layout_constraintEnd_toStartOf="@+id/iconCart"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/subTextIntro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="@string/subtextIntro"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textIntro"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textIntro"
-            app:layout_constraintTop_toBottomOf="@+id/textIntro" />
-
-        <ImageView
-            android:id="@+id/iconCart"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/desc_ic_cart"
-            app:layout_constraintBottom_toBottomOf="@+id/iconPeople"
-            app:layout_constraintEnd_toStartOf="@id/iconPeople"
-            app:layout_constraintTop_toTopOf="@+id/iconPeople"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/baseline_shopping_cart_24" />
-
-        <ImageView
-            android:id="@+id/iconPeople"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:contentDescription="@string/desc_ic_people"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_account_circle_24" />
-
-        <ImageView
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="114dp"
-            android:layout_marginTop="25dp"
-            android:contentDescription="@string/desc_banner"
-            android:src="@drawable/banner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.444"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subTextIntro" />
-
-        <ImageView
-            android:id="@+id/illustrationDelivery"
-            android:layout_width="150dp"
-            android:layout_height="106dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/desc_illustration"
-            app:layout_constraintBottom_toBottomOf="@+id/banner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/banner"
-            app:layout_constraintVertical_bias="0.125"
-            app:srcCompat="@drawable/delivery_food" />
-
-        <TextView
-            android:id="@+id/headerTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/header_title"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/illustrationDelivery"
-            app:layout_constraintHorizontal_bias="0.011"
-            app:layout_constraintStart_toStartOf="@+id/banner"
-            app:layout_constraintTop_toTopOf="@+id/banner" />
-
-        <TextView
-            android:id="@+id/headerFood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/header_food"
-            android:textColor="@color/orange"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@+id/headerDelivery"
-            app:layout_constraintTop_toBottomOf="@+id/headerTitle" />
-
-        <TextView
-            android:id="@+id/headerDelivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/header_delivery"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/headerFood"
-            app:layout_constraintStart_toStartOf="@+id/headerTitle"
-            app:layout_constraintTop_toTopOf="@+id/headerFood" />
-
-        <Button
-            android:id="@+id/button_started"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginBottom="6dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/button_started"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/banner"
-            app:layout_constraintStart_toStartOf="@+id/headerDelivery"
-            app:layout_constraintTop_toBottomOf="@+id/headerDelivery" />
-
-
-        <TextView
-            android:id="@+id/categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/categoriesTitle"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/banner"
-            app:layout_constraintTop_toBottomOf="@+id/banner" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardPizza"
-            android:layout_width="63dp"
-            android:layout_height="90dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="@color/orange"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/categories">
-
-            <ImageView
-                android:id="@+id/iconPizza"
-                android:layout_width="63dp"
-                android:layout_height="63dp"
-                android:contentDescription="@string/icon_pizza"
-                app:srcCompat="@drawable/pizza" />
-
-            <TextView
-                android:id="@+id/txtPizza"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/pizza"
-                android:textColor="@color/black" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-        android:id="@+id/cardBurger"
-        android:layout_width="63dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="30dp"
-        app:cardBackgroundColor="@color/orange"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/cardPizza"
-        app:layout_constraintStart_toEndOf="@+id/cardPizza"
-        app:layout_constraintTop_toTopOf="@id/cardPizza"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/iconBurger"
-            android:layout_width="65dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/icon_burger"
-            app:srcCompat="@drawable/hamburger" />
-
-        <TextView
-            android:id="@+id/txtBurger"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/burger"
-            android:textColor="@color/black" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardSnack"
-        android:layout_width="63dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="30dp"
-        app:cardBackgroundColor="@color/orange"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/cardBurger"
-        app:layout_constraintStart_toEndOf="@+id/cardBurger"
-        app:layout_constraintTop_toTopOf="@id/cardBurger"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/txtIceCream"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/snack"
-            android:textColor="@color/black" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            app:srcCompat="@drawable/baseline_icecream_24" />
-
-    </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardDrink"
-            android:layout_width="63dp"
-            android:layout_height="90dp"
-            android:layout_marginStart="30dp"
-            app:cardBackgroundColor="@color/orange"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardSnack"
-            app:layout_constraintStart_toEndOf="@+id/cardSnack"
-            app:layout_constraintTop_toTopOf="@id/cardSnack">
-
-            <ImageView
-                android:id="@+id/iconDrink"
-                android:layout_width="60dp"
-                android:layout_height="55dp"
-                android:contentDescription="@string/icon_drink"
-                app:srcCompat="@drawable/soda" />
-
-            <TextView
-                android:id="@+id/textDrink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/drink"
-                android:textColor="@color/black" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/titleMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="@string/title_menu_list"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/banner"
-            app:layout_constraintTop_toBottomOf="@+id/cardPizza"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRVMenus"
+        <fragment
+            android:id="@+id/nav_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/titleMenu"/>
+            android:layout_marginBottom="50dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_bottomnav"
+            tools:visibility="visible">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
