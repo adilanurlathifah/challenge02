@@ -1,5 +1,6 @@
 package org.adilanur.challenge02.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -31,7 +32,7 @@ class FoodAdapter(private val onItemClick: (Foods) -> Unit) :
 
     private val differ = AsyncListDiffer(this, object : DiffUtil.ItemCallback<Foods>(){
         override fun areItemsTheSame(oldItem: Foods, newItem: Foods): Boolean {
-            return oldItem.name == newItem.name  && oldItem.desc == newItem.desc && oldItem.desc == newItem.desc && oldItem.desc == newItem.desc && oldItem.desc == newItem.desc
+            return oldItem.name == newItem.name  && oldItem.desc == newItem.desc
         }
 
         override fun areContentsTheSame(oldItem: Foods, newItem: Foods): Boolean {
@@ -40,14 +41,13 @@ class FoodAdapter(private val onItemClick: (Foods) -> Unit) :
 
     })
 
-
 }
-
 
 class FoodItemListViewHolder(
     private val binding: ListLayoutBinding,
     private val onItemClick: (Foods) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
+    @SuppressLint("SetTextI18n")
     fun bind(food: Foods) {
         with(binding) {
             tvListName1.text = food.name

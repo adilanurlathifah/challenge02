@@ -14,7 +14,6 @@ import org.adilanur.challenge02.databinding.FragmentKeranjangBinding
 
 class KeranjangFragment : Fragment() {
     private lateinit var binding : FragmentKeranjangBinding
-
     private lateinit var cartAdapter: CartAdapter
 
     override fun onCreateView(

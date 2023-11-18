@@ -1,5 +1,6 @@
 package org.adilanur.challenge02.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -42,6 +43,7 @@ class CartAdapter(private val cartDao: CartDao) :
 
     inner class CartItemListViewHolder(private val binding: ItemCartBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(cart: Cart) {
             with(binding) {
                 txtFoodName.text = cart.name
