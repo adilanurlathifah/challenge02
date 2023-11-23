@@ -34,6 +34,7 @@ object NetworkModule {
     fun provideRetrofit(
         okHttpClient: OkHttpClient
     ): Retrofit {
+        // using mock server
         val BASE_URL = "https://442a883f-e041-48a9-93b0-dcaec22bf284.mock.pstmn.io/"
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)

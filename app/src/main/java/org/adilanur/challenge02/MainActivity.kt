@@ -11,31 +11,23 @@ import org.adilanur.challenge02.databinding.ActivityMainBinding
 
 
 @AndroidEntryPoint
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        navController = findNavController(R.id.nav_host)
 
-        setupBottomNav()
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.homeFragment || destination.id == R.id.keranjangFragment || destination.id == R.id.profileFragment) {
+                binding.navBottom.setupWithNavController(navController)
+                binding.navBottom.visibility = View.VISIBLE
 
-    }
-
-    private fun setupBottomNav() {
-        binding.apply {
-            navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-            navController.addOnDestinationChangedListener { _, destination, _ ->
-                if (destination.id == R.id.homeFragment || destination.id == R.id.keranjangFragment || destination.id == R.id.profileFragment) {
-                    binding.bottomNavView.setupWithNavController(navController)
-                    binding.bottomNavView.visibility = View.VISIBLE
-
-                } else {
-                    binding.bottomNavView.visibility = View.GONE
-                }
+            } else {
+                binding.navBottom.visibility = View.GONE
             }
         }
     }

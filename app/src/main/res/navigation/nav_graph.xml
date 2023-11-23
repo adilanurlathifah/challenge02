@@ -6,18 +6,21 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.adilanur.challenge02.views.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
         android:id="@+id/keranjangFragment"
         android:name="org.adilanur.challenge02.views.KeranjangFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_keranjang" />
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="org.adilanur.challenge02.views.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="org.adilanur.challenge02.views.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+
 </navigation>

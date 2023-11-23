@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="165dp"
-    android:layout_height="189dp"
-    android:layout_marginStart="16dp"
-    app:cardCornerRadius="9dp"
-    android:background="@color/cream"
-    android:padding="5dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="16dp"
-    >
+    android:layout_width="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_foods"
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:scaleType="centerCrop"/>
-        <TextView
-            android:id="@+id/tv_foods_name"
-            android:textAlignment="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Burger Bangor"
-            android:padding="5dp"
-            android:layout_marginBottom="4dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center" />
-        <TextView
-            android:id="@+id/tv_foods_price"
-            android:textAlignment="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp.100201"
-            android:padding="5dp"
-            android:layout_marginBottom="4dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center" />
-    </LinearLayout>
+            android:layout_height="160dp"
+            android:background="@color/cream">
 
-</androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/img_food"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="@drawable/burger"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_food_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Burger Bangor"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_food" />
+
+            <TextView
+                android:id="@+id/txt_food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp10.000"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_food_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
