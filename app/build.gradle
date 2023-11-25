@@ -2,9 +2,10 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
-    id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -82,14 +83,13 @@ dependencies {
     //viewmodel ktx
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
-    //coil image loader
-    implementation 'io.coil-kt:coil:2.2.1'
-
     //glide
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     implementation 'androidx.activity:activity-ktx:1.5.1'
 
+    //coil image loader
+    implementation 'io.coil-kt:coil:2.2.1'
 
     def hilt_version= "2.40"
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -98,4 +98,8 @@ dependencies {
     //image round
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.karumi:dexter:6.2.3'
+
+    // firebase
+    implementation 'com.google.firebase:firebase-auth:21.0.3'
+    
 }

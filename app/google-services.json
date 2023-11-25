@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "854508409089",
+    "project_id": "challenge02-6f054",
+    "storage_bucket": "challenge02-6f054.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854508409089:android:4d51c0e40cf575952f4b00",
+        "android_client_info": {
+          "package_name": "org.adilanur.challenge02"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUjLwNnJUAuNKq57AnzdExaZEyr1KPcqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

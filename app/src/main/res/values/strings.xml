@@ -31,4 +31,6 @@
     <string name="desc_ayam_goreng">ini merupakan gambar ayam goreng</string>
     <string name="price_sushi">Rp.20.000</string>
     <string name="dimsum">Dimsum</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
