@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -91,7 +92,7 @@ dependencies {
     //coil image loader
     implementation 'io.coil-kt:coil:2.2.1'
 
-    def hilt_version= "2.40"
+    def hilt_version = "2.40"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
@@ -100,6 +101,8 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.3'
 
     // firebase
+//    implementation platform("com.google.firebase:firebase-bom:32.6.0")
+//    implementation 'com.google.firebase:firebase-auth'
+//    implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
-    
 }
