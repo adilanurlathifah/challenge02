@@ -1,2 +1,3 @@
-# challenge02 : 
-project slicing dari design aplikasi pemesanan makanan ke tampilan xml (challenge chapter 2 - Binar Academy)
+# challenge06 : 
+revisi challenge 05 dan 06.
+- using retrofit, hilt, and firebase.
