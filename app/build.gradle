@@ -45,17 +45,17 @@ android {
                 buildConfigField "String", "BASE_URL", "\"https://5eec939a-dd4a-4743-be27-b70efe552ec3.mock.pstmn.io\""
             }
         }
-        flavorDimensions += "version"
-        productFlavors {
-            create("devApp") {
-                applicationIdSuffix = ".dev"
-                buildConfigField "String", "TAG", "\"Develop\""
-            }
-            create("prodApp") {
-                applicationIdSuffix = ".prod"
-                buildConfigField "String", "TAG", "\"Prod\""
-            }
-        }
+//        flavorDimensions += "version"
+//        productFlavors {
+//            create("devApp") {
+//                applicationIdSuffix = ".dev"
+//                buildConfigField "String", "TAG", "\"Develop\""
+//            }
+//            create("prodApp") {
+//                applicationIdSuffix = ".prod"
+//                buildConfigField "String", "TAG", "\"Prod\""
+//            }
+//        }
     }
 
     compileOptions {
