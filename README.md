@@ -1,3 +1,4 @@
-# challenge06 : 
-revisi challenge 05 dan 06.
-- using retrofit, hilt, and firebase.
+# challenge 07 : 
+- add build flavor (dev & prod env)
+- dokumentasi network profiler (https://drive.google.com/file/d/1eUNC52hTzoNtFDzo_Wsr0HjY0TIC6Rsj/view?usp=sharing)
+- unit testing
