@@ -15,6 +15,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    private lateinit var okHttpClient: OkHttpClient
+    val BASE_URL = "https://442a883f-e041-48a9-93b0-dcaec22bf284.mock.pstmn.io/"
+
+    fun init(okHttpClient: OkHttpClient) {
+        this.okHttpClient = okHttpClient
+    }
 
     @Singleton
     @Provides
@@ -31,22 +37,19 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient
-    ): Retrofit {
-        // using mock server
-        val BASE_URL = "https://442a883f-e041-48a9-93b0-dcaec22bf284.mock.pstmn.io/"
-        val retrofit = Retrofit.Builder()
+    fun provideRetrofit(): Retrofit {
+        val instance = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        return retrofit
+        return instance
     }
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit):
+            ApiService = retrofit.create(ApiService::class.java)
 
     @Singleton
     @Provides
